@@ -246,3 +246,13 @@ async def get_chunks_with_agreements(
         .where(ChunkRecord.id.in_(list(chunk_ids)))
     )
     return {chunk.id: (chunk, agreement) for chunk, agreement in result}
+
+
+async def get_article_text(session: AsyncSession, agreement_id: str, ref: str) -> str:
+    """All the parts of an article (or annex), in order, joined."""
+    result = await session.execute(
+        select(ChunkRecord.text)
+        .where(ChunkRecord.agreement_id == agreement_id, ChunkRecord.ref == ref)
+        .order_by(ChunkRecord.part)
+    )
+    return "\n".join(result.scalars().all())
