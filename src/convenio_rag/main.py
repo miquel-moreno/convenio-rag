@@ -7,7 +7,7 @@ from fastapi import FastAPI
 
 from convenio_rag import __version__
 from convenio_rag.adapters.db import make_engine, make_session_factory
-from convenio_rag.api import health
+from convenio_rag.api import health, search
 from convenio_rag.api.middleware import request_id_middleware
 from convenio_rag.core.config import get_settings
 from convenio_rag.core.errors import register_error_handlers
@@ -31,6 +31,7 @@ def create_app() -> FastAPI:
     app.middleware("http")(request_id_middleware)
     register_error_handlers(app)
     app.include_router(health.router)
+    app.include_router(search.router)
     return app
 
 

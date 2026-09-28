@@ -10,7 +10,7 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-from convenio_rag.adapters.db import Base
+from convenio_rag.adapters.db import Base, include_object
 from convenio_rag.core.config import get_settings
 
 config = context.config
@@ -47,7 +47,11 @@ def run_migrations_online() -> None:
     section["sqlalchemy.url"] = database_url()
     connectable = engine_from_config(section, prefix="sqlalchemy.", poolclass=pool.NullPool)
     with connectable.connect() as connection:
-        context.configure(connection=connection, target_metadata=target_metadata)
+        context.configure(
+            connection=connection,
+            target_metadata=target_metadata,
+            include_object=include_object,
+        )
         with context.begin_transaction():
             context.run_migrations()
 

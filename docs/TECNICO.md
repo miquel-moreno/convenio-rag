@@ -34,6 +34,16 @@ uv run python -m scripts.ingest --refresh    # los vuelve a descargar del BOE an
 
 El texto oficial (XML) está versionado en `data/boe/`: la carga y la evaluación se pueden repetir sin conexión y siempre sobre el mismo texto. Resultado de la carga: 142 fragmentos (consultoría) y 430 (metal); una segunda carga no duplica nada.
 
+## Búsqueda
+
+`GET /search?q=...&mode=hybrid|vector|text&limit=5&agreement=BOE-A-...` devuelve los artículos más relevantes (uno por artículo) con su posición en cada buscador.
+
+- **Texto completo (PostgreSQL, configuración `spanish`):** raíces de palabras ("vacación" encuentra "vacaciones") y sin palabras vacías. Se busca con OR de las palabras de la pregunta y se ordena con `ts_rank_cd`; índice GIN sobre `to_tsvector('spanish', ref || ' ' || title || ' ' || text)`.
+- **Semántica (pgvector):** embeddings de 384 dimensiones con `paraphrase-multilingual-MiniLM-L12-v2` (fastembed/ONNX, en local, ~250 MB, se descarga la primera vez) y distancia coseno con índice HNSW.
+- **Fusión RRF** (*Reciprocal Rank Fusion*, k = 60) de los 20 primeros de cada buscador.
+
+Por qué dos buscadores: en una prueba con frases de ejemplo, la búsqueda semántica relacionó "¿me pagan más si trabajo de noche?" con un texto sobre el "plus de nocturnidad", con el que no comparte ninguna palabra; la de texto no puede hacerlo. A la inversa, la de texto es más fiable con términos exactos.
+
 ## Arquitectura
 
 ```
@@ -41,7 +51,7 @@ src/convenio_rag/
 ├── api/        # rutas HTTP (FastAPI) y middleware
 ├── core/       # configuración, logging JSON, errores
 ├── services/   # lógica de negocio, sin red: troceado de convenios, carga
-└── adapters/   # LLM, base de datos y BOE, detrás de interfaces
+└── adapters/   # LLM, embeddings, base de datos y BOE, detrás de interfaces
 ```
 
 ## Decisiones técnicas
@@ -54,6 +64,13 @@ src/convenio_rag/
 | Los artículos de reglamentos dentro de un anexo se citan como "Anexo VII · Artículo 6" | Evita que "Artículo 6" apunte a dos textos distintos: el convenio del metal incluye reglamentos con su propia numeración |
 | Las leyes citadas entre comillas («Artículo 25…») se quedan dentro de su artículo | El XML las marca como encabezados; tratarlas como artículos nuevos partía el artículo que las cita |
 | Las tablas (salarios) se convierten en texto `celda \| celda` | Preguntas como "¿cuánto cobra un programador?" tienen la respuesta en las tablas de los anexos |
+| Búsqueda híbrida (texto + semántica) fusionada con RRF | Cada buscador falla en casos distintos: el de texto no entiende sinónimos ("noche" / "nocturnidad"); el semántico puede fallar con términos exactos ("artículo 21", "IT"). RRF solo usa posiciones, así que combina rankings con puntuaciones no comparables sin ajustar pesos |
+| Embeddings en local con fastembed (ONNX) y un modelo ligero | Sin coste por consulta ni claves, y sin PyTorch (más de 1 GB). Detrás de una interfaz: cambiar de modelo es cambiar `EMBEDDING_MODEL` (y la dimensión en una migración) |
+| OR de palabras en la búsqueda de texto | Con AND, una pregunta ("¿cuántos días de vacaciones tengo?") exigiría palabras que el artículo no contiene ("tengo") y no devolvería nada. El ranking premia los fragmentos con más coincidencias |
+| Un resultado por artículo | Los artículos largos están partidos en varios fragmentos; sin agruparlos, el mismo artículo ocuparía varios puestos del top |
+| pgvector en PostgreSQL, no una base de datos vectorial aparte | Un solo sistema que ya se usa para los datos, con transacciones, y las dos búsquedas en la misma consulta. Para decenas de miles de fragmentos es de sobra |
+| Tests de búsqueda contra PostgreSQL real (servicio en la CI) | SQLite no tiene búsqueda de texto en español ni pgvector. Las pruebas `tests/pg` se ejecutan en la CI con un contenedor `pgvector/pgvector:pg16` y en local con `TEST_DATABASE_URL` |
+| Índice de texto con `\|\|` y no `concat_ws` | PostgreSQL solo acepta funciones IMMUTABLE en un índice por expresión; `concat_ws` no lo es |
 
 ## Evaluación
 
@@ -61,5 +78,6 @@ _Pendiente._ Resultados en `evals/results/`, con fecha y modelo.
 
 ## Limitaciones
 
+- **El convenio estatal del metal remite muchas condiciones a los convenios provinciales** (por ejemplo, la jornada anual, art. 46, o pluses como la nocturnidad). Para esas preguntas la respuesta correcta es "este convenio no lo fija", no un número.
 - Sin números de página en las citas (el XML oficial no los trae).
 - No incluye las publicaciones posteriores que modifican los convenios (tablas salariales de 2026 de consultoría, modificación de 2022 del metal).

@@ -28,7 +28,12 @@ COPY --chown=app:app alembic.ini ./
 COPY --chown=app:app migrations ./migrations
 
 ENV PATH="/app/.venv/bin:$PATH" \
-    PYTHONUNBUFFERED=1
+    PYTHONUNBUFFERED=1 \
+    EMBEDDING_CACHE_DIR=/home/app/.cache/fastembed \
+    HF_HUB_DISABLE_SYMLINKS_WARNING=1
+
+# The embedding model (~250 MB) is downloaded into /home/app/.cache on first use:
+# docker-compose.yml keeps it in a volume so it is downloaded only once.
 
 USER app
 EXPOSE 8000

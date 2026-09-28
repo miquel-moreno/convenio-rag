@@ -23,6 +23,10 @@ class Settings(BaseSettings):
 
     database_url: str = "postgresql+asyncpg://app:app@localhost:5432/app"
 
+    # Local multilingual embedding model (fastembed/ONNX, ~250 MB, downloaded on first use).
+    embedding_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    embedding_cache_dir: str = ".cache/fastembed"
+
 
 @lru_cache
 def get_settings() -> Settings:

@@ -17,6 +17,8 @@ dependencies = [
     "psycopg[binary]>=3.2",
     "asyncpg>=0.30",
     "defusedxml>=0.7",
+    "fastembed>=0.7",
+    "pgvector>=0.3",
 ]
 
 [dependency-groups]
@@ -61,6 +63,7 @@ plugins = ["pydantic.mypy"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = ["pg: needs a PostgreSQL with pgvector (TEST_DATABASE_URL); skipped without it"]
 asyncio_mode = "auto"
 addopts = "-q"
 
