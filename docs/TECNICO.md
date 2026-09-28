@@ -56,6 +56,10 @@ Devuelve `found`, `answer` (1–3 frases), `citations` (convenio, artículo, tí
 2. Se dan al LLM como fuentes numeradas `[1]…[5]` con reglas estrictas: solo esas fuentes, citar por número, decir si la respuesta no está. Salida estructurada estricta `{found, answer, citations}`, con un reintento si no es válida.
 3. **Verificación:** cada cita debe ser una de las fuentes dadas; las inventadas se descartan y una respuesta sin ninguna cita válida se convierte en "no encontrado".
 
+## Página de demo
+
+`http://localhost:8000/` sirve una página mínima (un solo HTML sin dependencias, `src/convenio_rag/static/index.html`) con un selector de convenio, ejemplos de preguntas y la respuesta con sus citas y enlaces al BOE. Solo llama a `POST /ask`. El GIF del README se regenera con `uv run python -m scripts.record_demo --url ...` (Playwright con el Edge instalado; necesita el servicio en marcha y un LLM configurado).
+
 ## Arquitectura
 
 ```
@@ -123,6 +127,7 @@ En una pregunta (desconexión digital, metal) ninguno de los dos buscadores pon�
 
 ## Limitaciones
 
+- **La recuperación depende de cómo se redacte la pregunta.** Ejemplo real: "¿Cuántas horas al año se trabajan en el metal?" trae el art. 46 (duración de la jornada) y la respuesta explica la remisión a los convenios de ámbito inferior; "¿Cuántas horas al año se trabajan?" no lo trae entre los 5 primeros (el artículo habla de "jornada" y "cómputo anual") y la respuesta es un "no lo he encontrado" correcto pero poco útil. Mejoras posibles: reescribir la pregunta con el LLM antes de buscar, o dar más artículos al modelo; habría que medirlas con la evaluación.
 - **El convenio estatal del metal remite muchas condiciones a los convenios provinciales** (por ejemplo, la jornada anual, art. 46, o pluses como la nocturnidad). Para esas preguntas la respuesta correcta es "este convenio no lo fija", no un número.
 - Sin números de página en las citas (el XML oficial no los trae).
 - No incluye las publicaciones posteriores que modifican los convenios (tablas salariales de 2026 de consultoría, modificación de 2022 del metal).

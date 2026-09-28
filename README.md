@@ -4,7 +4,7 @@
 
 Para trabajadores y pequeñas empresas que necesitan una respuesta concreta ("¿cuántos días de vacaciones tengo?") en un convenio del BOE de más de 100 páginas.
 
-> 🚧 **En desarrollo.** Primera versión prevista para octubre de 2026.
+![Demo: una pregunta con respuesta y cita, una pregunta trampa y una remisión a otros convenios](docs/images/demo.gif)
 
 ## Qué hace
 - Responde en lenguaje llano a preguntas sobre convenios colectivos estatales publicados en el BOE
