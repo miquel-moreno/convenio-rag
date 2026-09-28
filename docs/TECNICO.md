@@ -7,7 +7,9 @@ cp .env.example .env   # elige proveedor de LLM y añade tu clave
 docker compose up --build
 ```
 
-La API queda en http://localhost:8000 (documentación interactiva en `/docs`). Al arrancar, el contenedor aplica las migraciones pendientes.
+La página de demo queda en http://localhost:8000 y la API en `/docs`. **La primera vez tarda unos 2 minutos:** el contenedor aplica las migraciones, descarga el modelo de embeddings (~250 MB, se guarda en un volumen) y carga los dos convenios (572 fragmentos). En los siguientes arranques detecta que ya están cargados y arranca en segundos.
+
+Para las respuestas hace falta un LLM en `.env`: `LLM_PROVIDER=openai` + `OPENAI_API_KEY`, o `LLM_PROVIDER=ollama` con Ollama en la máquina anfitriona. La búsqueda (`/search`) funciona sin LLM.
 
 Desarrollo local:
 

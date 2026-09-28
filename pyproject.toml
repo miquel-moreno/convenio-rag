@@ -1,6 +1,6 @@
 [project]
 name = "convenio-rag"
-version = "0.1.0"
+version = "1.0.0"
 description = "Ask questions about Spanish collective agreements and get answers that cite the article"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"

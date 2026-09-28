@@ -112,3 +112,12 @@ async def test_ingest_script_loads_the_catalog_from_saved_files(
         get_settings.cache_clear()
 
     assert list(counts) == ["BOE-A-2025-7766"] and counts["BOE-A-2025-7766"] > 100
+
+    # A second start of the container with --if-empty does not load again.
+    monkeypatch.setenv("DATABASE_URL", url)
+    get_settings.cache_clear()
+    try:
+        again = await ingest_script.run(refresh=False, data_dir=data_dir, if_empty=True)
+    finally:
+        get_settings.cache_clear()
+    assert again == {}
