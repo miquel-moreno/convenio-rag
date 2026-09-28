@@ -7,7 +7,13 @@ services:
       - path: .env
         required: false
     environment:
-      DATABASE_URL: postgresql+psycopg://app:app@db:5432/app
+      DATABASE_URL: postgresql+asyncpg://app:app@db:5432/app
+      # Ollama runs on the host machine, not in this compose file.
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - models:/home/app/.cache  # embedding model, downloaded once
     depends_on:
       db:
         condition: service_healthy
@@ -30,3 +36,4 @@ services:
 
 volumes:
   pgdata:
+  models:
