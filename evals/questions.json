@@ -1,0 +1,42 @@
+{
+  "description": "Handwritten evaluation set. Every expected article and fact was checked against the official BOE text (data/boe/) on 2026-09-28. 'facts': every group must match, any option in a group is enough (case-insensitive).",
+  "questions": [
+    {"id": "c01", "agreement": "BOE-A-2025-7766", "question": "¿Cuántos días de vacaciones al año tengo?", "expected_refs": ["Artículo 21"], "facts": [["23", "veintitrés"]]},
+    {"id": "c02", "agreement": "BOE-A-2025-7766", "question": "¿Cuántos días de permiso me dan si me caso?", "expected_refs": ["Artículo 22"], "facts": [["15", "quince"]]},
+    {"id": "c03", "agreement": "BOE-A-2025-7766", "question": "¿Cuántos días de permiso tengo si hospitalizan a mi padre?", "expected_refs": ["Artículo 22"], "facts": [["5", "cinco"]]},
+    {"id": "c04", "agreement": "BOE-A-2025-7766", "question": "¿Cuántas horas al año se trabajan como máximo?", "expected_refs": ["Artículo 20"], "facts": [["1.800", "1800"]]},
+    {"id": "c05", "agreement": "BOE-A-2025-7766", "question": "¿Cuántas horas ordinarias puedo trabajar como máximo en un día?", "expected_refs": ["Artículo 20"], "facts": [["9", "nueve"]]},
+    {"id": "c06", "agreement": "BOE-A-2025-7766", "question": "¿Cuánto dura el periodo de prueba de una persona del grupo A?", "expected_refs": ["Artículo 10"], "facts": [["6", "seis"]]},
+    {"id": "c07", "agreement": "BOE-A-2025-7766", "question": "¿Con cuánta antelación tengo que avisar si me voy de la empresa?", "expected_refs": ["Artículo 32"], "facts": [["15", "quince"]]},
+    {"id": "c08", "agreement": "BOE-A-2025-7766", "question": "¿Qué pasa si dimito sin avisar con antelación?", "expected_refs": ["Artículo 32"], "facts": [["paga extraordinaria", "paga extra"]]},
+    {"id": "c09", "agreement": "BOE-A-2025-7766", "question": "¿Puedo pedir un permiso sin sueldo? ¿Cuánto tiempo como máximo?", "expected_refs": ["Artículo 23"], "facts": [["un mes", "1 mes"]]},
+    {"id": "c10", "agreement": "BOE-A-2025-7766", "question": "¿Qué antigüedad necesito para pedir un permiso sin sueldo?", "expected_refs": ["Artículo 23"], "facts": [["un año", "1 año"]]},
+    {"id": "c11", "agreement": "BOE-A-2025-7766", "question": "¿Cuándo se cobran las pagas extraordinarias?", "expected_refs": ["Artículo 28"], "facts": [["julio"], ["diciembre"]]},
+    {"id": "c12", "agreement": "BOE-A-2025-7766", "question": "¿Puedo cobrar el sueldo en 12 pagas en vez de 14?", "expected_refs": ["Artículo 28"], "facts": [["12", "doce"]]},
+    {"id": "c13", "agreement": "BOE-A-2025-7766", "question": "Si estoy de baja por enfermedad, ¿la empresa me complementa el sueldo?", "expected_refs": ["Artículo 26"], "facts": [["100"]]},
+    {"id": "c14", "agreement": "BOE-A-2025-7766", "question": "¿Cuánto es la dieta completa cuando me desplazo por trabajo?", "expected_refs": ["Artículo 30"], "facts": [["57,20", "57.20", "58,92", "58.92"]]},
+    {"id": "c15", "agreement": "BOE-A-2025-7766", "question": "¿La empresa me ayuda a pagar estudios o formación?", "expected_refs": ["Artículo 14"], "facts": [["218,10", "218.10"]]},
+    {"id": "c16", "agreement": "BOE-A-2025-7766", "question": "¿Cómo funciona el complemento de antigüedad?", "expected_refs": ["Artículo 25"], "facts": [["trienio"]]},
+    {"id": "c17", "agreement": "BOE-A-2025-7766", "question": "¿Me pueden obligar a teletrabajar?", "expected_refs": ["Artículo 41"], "facts": [["voluntari"]]},
+    {"id": "c18", "agreement": "BOE-A-2025-7766", "question": "¿Cuánto tiempo puede durar una excedencia voluntaria?", "expected_refs": ["Artículo 33"], "facts": [["cinco años", "5 años"]]},
+
+    {"id": "m01", "agreement": "BOE-A-2022-479", "question": "¿Cuánto dura el periodo de prueba en el grupo profesional 3?", "expected_refs": ["Artículo 31"], "facts": [["dos meses", "2 meses"]]},
+    {"id": "m02", "agreement": "BOE-A-2022-479", "question": "¿Cuánto dura el periodo de prueba en el grupo 6?", "expected_refs": ["Artículo 31"], "facts": [["15", "quince"]]},
+    {"id": "m03", "agreement": "BOE-A-2022-479", "question": "¿Cuántas horas al año se trabajan en el metal?", "expected_refs": ["Artículo 46"], "facts": [["inferior", "provincial"]]},
+    {"id": "m04", "agreement": "BOE-A-2022-479", "question": "¿Cuándo prescriben las faltas leves?", "expected_refs": ["Artículo 67"], "facts": [["diez", "10"]]},
+    {"id": "m05", "agreement": "BOE-A-2022-479", "question": "¿En cuánto tiempo prescriben las faltas muy graves?", "expected_refs": ["Artículo 67"], "facts": [["sesenta", "60"]]},
+    {"id": "m06", "agreement": "BOE-A-2022-479", "question": "¿Cuántos equipos de ropa de trabajo me tiene que dar la empresa?", "expected_refs": ["Artículo 84"], "facts": [["dos", "2"]]},
+    {"id": "m07", "agreement": "BOE-A-2022-479", "question": "¿Con cuánta antelación me tienen que avisar de un desplazamiento de más de tres meses?", "expected_refs": ["Artículo 44"], "facts": [["cinco días", "5 días"]]},
+    {"id": "m08", "agreement": "BOE-A-2022-479", "question": "¿Cuánto tiempo como máximo puede durar un desplazamiento a otro centro?", "expected_refs": ["Artículo 44"], "facts": [["doce meses", "12 meses"]]},
+    {"id": "m09", "agreement": "BOE-A-2022-479", "question": "¿Tengo derecho a no contestar mensajes del trabajo fuera de mi horario?", "expected_refs": ["Artículo 49"], "facts": [["desconexión"]]},
+    {"id": "m10", "agreement": "BOE-A-2022-479", "question": "¿Hasta cuándo está vigente el convenio del metal?", "expected_refs": ["Artículo 5"], "facts": [["2023"], ["sustitu"]]},
+    {"id": "m11", "agreement": "BOE-A-2022-479", "question": "¿Puede la empresa controlarme con GPS?", "expected_refs": ["Artículo 121"], "facts": [["inform"]]},
+    {"id": "m12", "agreement": "BOE-A-2022-479", "question": "¿Cuál es el salario mínimo en el sector del metal?", "expected_refs": ["Artículo 50"], "facts": [["convenio"]]},
+
+    {"id": "t01", "agreement": "BOE-A-2025-7766", "question": "¿Tengo derecho a un coche de empresa?", "trick": true},
+    {"id": "t02", "agreement": "BOE-A-2025-7766", "question": "¿La empresa me paga el gimnasio?", "trick": true},
+    {"id": "t03", "agreement": "BOE-A-2025-7766", "question": "¿Tengo un seguro de vida pagado por la empresa?", "trick": true},
+    {"id": "t04", "agreement": "BOE-A-2022-479", "question": "¿La empresa me paga la guardería de mis hijos?", "trick": true},
+    {"id": "t05", "agreement": "BOE-A-2022-479", "question": "¿Cobro un bonus por los beneficios de la empresa?", "trick": true}
+  ]
+}

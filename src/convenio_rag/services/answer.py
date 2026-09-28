@@ -16,7 +16,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from convenio_rag.adapters.db import get_article_text
 from convenio_rag.adapters.embeddings import Embedder
 from convenio_rag.adapters.llm import ChatMessage, LLMClient, strict_json_schema
-from convenio_rag.services.search import SearchResult, search
+from convenio_rag.services.search import SearchMode, SearchResult, search
 
 TOP_K = 5
 MAX_SOURCE_CHARS = 4000  # an article longer than this is cut (salary tables, annexes)
@@ -147,8 +147,11 @@ async def ask(
     llm: LLMClient,
     agreement_id: str | None = None,
     top_k: int = TOP_K,
+    mode: SearchMode = SearchMode.HYBRID,
 ) -> AskResult:
-    results = await search(session, embedder, question, limit=top_k, agreement_id=agreement_id)
+    results = await search(
+        session, embedder, question, limit=top_k, agreement_id=agreement_id, mode=mode
+    )
     sources = await gather_sources(session, results)
     messages = build_messages(question, sources)
 
