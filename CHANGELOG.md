@@ -5,6 +5,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-09-28
+
 ### Added
 - Project scaffold: FastAPI app, health endpoint, JSON logging, CI, Docker.
 - Official BOE XML of the XIX consultancy/IT and IV metal agreements, with a catalog.
@@ -19,3 +21,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 - Demo page at `/` and the README GIF, recorded with `scripts/record_demo.py`.
 - `docker compose up` works from scratch: the image ships the BOE data and loads it on the
   first start (`scripts.ingest --if-empty`); the embedding model is kept in a volume.
+
+[Unreleased]: https://github.com/miquel-moreno/convenio-rag/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/miquel-moreno/convenio-rag/releases/tag/v1.0.0
