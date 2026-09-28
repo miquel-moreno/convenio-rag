@@ -17,3 +17,5 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 - Evaluation (`make eval`): 30 handwritten questions + 5 trick questions; retrieval hit@5 and
   MRR per search mode, answer accuracy, wrong answers and refusals; results in `evals/results/`.
 - Demo page at `/` and the README GIF, recorded with `scripts/record_demo.py`.
+- `docker compose up` works from scratch: the image ships the BOE data and loads it on the
+  first start (`scripts.ingest --if-empty`); the embedding model is kept in a volume.
