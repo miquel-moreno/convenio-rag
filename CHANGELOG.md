@@ -14,3 +14,5 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
   RRF; `GET /search`. Search tests run against PostgreSQL in CI.
 - `POST /ask`: answer from the retrieved articles with verified citations and official BOE
   links, or an honest "not found".
+- Evaluation (`make eval`): 30 handwritten questions + 5 trick questions; retrieval hit@5 and
+  MRR per search mode, answer accuracy, wrong answers and refusals; results in `evals/results/`.

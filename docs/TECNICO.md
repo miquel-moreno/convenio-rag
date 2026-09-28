@@ -89,7 +89,37 @@ src/convenio_rag/
 
 ## Evaluación
 
-_Pendiente._ Resultados en `evals/results/`, con fecha y modelo.
+```bash
+make eval ARGS="--retrieval-only"                          # solo el buscador, sin LLM, gratis
+make eval ARGS="--provider openai --model gpt-4.1-mini"    # buscador + respuestas
+```
+
+**Conjunto:** 30 preguntas escritas a mano (18 del convenio de consultoría y 12 del metal), cada una con el artículo esperado y el dato que debe aparecer en la respuesta, comprobados en el texto oficial; más **5 preguntas trampa** cuya respuesta no está en el convenio (coche de empresa, gimnasio, seguro de vida, guardería, bonus). Dos preguntas del metal tienen como respuesta correcta una remisión (el convenio estatal lo deja a los convenios de ámbito inferior). Todo en `evals/questions.json`.
+
+**Recuperación** (sin LLM; ¿está el artículo esperado entre los 5 primeros?), 28/09/2026, modelo de embeddings `paraphrase-multilingual-MiniLM-L12-v2`:
+
+| Búsqueda | hit@5 | MRR |
+|---|---|---|
+| Solo texto (full-text en español) | 76,7 % (23/30) | 0,623 |
+| Solo semántica (pgvector) | 86,7 % (26/30) | 0,808 |
+| **Híbrida (RRF)** | **96,7 % (29/30)** | **0,811** |
+
+En una pregunta (desconexión digital, metal) ninguno de los dos buscadores ponía el artículo en su top 5, pero ambos lo tenían cerca y la fusión sí lo encuentra.
+
+**Respuestas** (`gpt-4.1-mini`, 28/09/2026). "Correcta" = cita el artículo esperado **y** contiene el dato esperado:
+
+| | Híbrida | Solo semántica |
+|---|---|---|
+| Respuestas correctas | **29 / 30 (96,7 %)** | 26 / 30 (86,7 %) |
+| **Respuestas equivocadas dadas como buenas** | **0** | 2 |
+| "No lo he encontrado" en preguntas con respuesta | 1 | 2 |
+| Preguntas trampa rechazadas | 5 / 5 | 5 / 5 |
+| Tiempo medio por pregunta | 1,3 s | 1,5 s |
+| Coste (35 preguntas) | $0,044 | $0,044 |
+
+- El único fallo de la híbrida es un "no lo he encontrado" honesto: "¿cuál es el salario mínimo en el metal?" (el art. 50 se titula "Salario del sector" y lo remite al convenio aplicable; el buscador no lo trae).
+- Con solo búsqueda semántica aparecen respuestas equivocadas: cuando las fuentes recuperadas no son las correctas, el modelo responde con otra fuente real. La verificación de citas evita citas **inventadas**, no el uso de una fuente **equivocada**: contra eso, la defensa es una recuperación mejor.
+- Los resultados de la híbrida fueron idénticos en dos ejecuciones; los de solo semántica variaron (25 y 26 de 30). Resultados completos, pregunta a pregunta, en `evals/results/`.
 
 ## Limitaciones
 
