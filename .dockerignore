@@ -13,4 +13,7 @@ htmlcov
 tests
 evals
 docs
-scripts
+# scripts/ is needed in the image: the container loads the agreements on first start.
+.cache
+data/local
+evals/results

@@ -10,6 +10,8 @@ services:
       DATABASE_URL: postgresql+asyncpg://app:app@db:5432/app
       # Ollama runs on the host machine, not in this compose file.
       OLLAMA_BASE_URL: http://host.docker.internal:11434
+      # Overrides a relative path coming from .env: the non-root user can only write here.
+      EMBEDDING_CACHE_DIR: /home/app/.cache/fastembed
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:

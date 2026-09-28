@@ -20,12 +20,17 @@ RUN uv sync --frozen --no-dev --no-editable
 # --- Stage 2: small runtime image, non-root user --------------------------
 FROM python:3.12-slim
 
-RUN useradd --create-home --uid 1000 app
+RUN useradd --create-home --uid 1000 app \
+    # Owned by app: a named volume mounted here keeps this owner (else it is root's).
+    && mkdir -p /home/app/.cache && chown app:app /home/app/.cache
 
 WORKDIR /app
 COPY --from=builder --chown=app:app /app/.venv /app/.venv
 COPY --chown=app:app alembic.ini ./
 COPY --chown=app:app migrations ./migrations
+# The official BOE XML and the loader: the first start fills an empty database.
+COPY --chown=app:app data ./data
+COPY --chown=app:app scripts ./scripts
 
 ENV PATH="/app/.venv/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
@@ -38,8 +43,10 @@ ENV PATH="/app/.venv/bin:$PATH" \
 USER app
 EXPOSE 8000
 
-HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
+# start-period covers the first start: model download (~250 MB) and loading the agreements.
+HEALTHCHECK --interval=30s --timeout=3s --start-period=300s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
 
-# Apply pending migrations, then start the API (exec: uvicorn gets the stop signals).
-CMD ["sh", "-c", "alembic upgrade head && exec uvicorn convenio_rag.main:app --host 0.0.0.0 --port 8000"]
+# Apply pending migrations, load the agreements if the database is empty, then start the
+# API (exec: uvicorn gets the stop signals).
+CMD ["sh", "-c", "alembic upgrade head && python -m scripts.ingest --if-empty && exec uvicorn convenio_rag.main:app --host 0.0.0.0 --port 8000"]
