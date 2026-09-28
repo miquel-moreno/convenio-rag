@@ -1,0 +1,1742 @@
+{
+  "run_at": "2026-09-28T20:16:59+00:00",
+  "questions": 35,
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "retrieval": {
+    "hybrid": {
+      "hit@5": 96.7,
+      "mrr": 0.811
+    },
+    "vector": {
+      "hit@5": 86.7,
+      "mrr": 0.808
+    },
+    "text": {
+      "hit@5": 76.7,
+      "mrr": 0.623
+    }
+  },
+  "retrieval_details": [
+    {
+      "id": "c01",
+      "expected": [
+        "Artículo 21"
+      ],
+      "hybrid": [
+        "Artículo 21",
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 30"
+      ],
+      "vector": [
+        "Artículo 21",
+        "Artículo 20",
+        "Artículo 28",
+        "Artículo 22",
+        "Artículo 29"
+      ],
+      "text": [
+        "Artículo 21",
+        "Artículo 28",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "c02",
+      "expected": [
+        "Artículo 22"
+      ],
+      "hybrid": [
+        "Artículo 22",
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 16",
+        "Artículo 21"
+      ],
+      "vector": [
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 23",
+        "Artículo 10",
+        "Artículo 20"
+      ],
+      "text": [
+        "Artículo 22",
+        "Artículo 24",
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 32"
+      ]
+    },
+    {
+      "id": "c03",
+      "expected": [
+        "Artículo 22"
+      ],
+      "hybrid": [
+        "Artículo 22",
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 16",
+        "Artículo 28"
+      ],
+      "vector": [
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 33",
+        "Artículo 23",
+        "Artículo 26"
+      ],
+      "text": [
+        "Artículo 22",
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 16",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c04",
+      "expected": [
+        "Artículo 20"
+      ],
+      "hybrid": [
+        "Artículo 20",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 29",
+        "Artículo 23"
+      ],
+      "vector": [
+        "Artículo 20",
+        "Artículo 29",
+        "Artículo 28",
+        "Artículo 21",
+        "Artículo 22"
+      ],
+      "text": [
+        "Artículo 40",
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 23",
+        "Artículo 39"
+      ]
+    },
+    {
+      "id": "c05",
+      "expected": [
+        "Artículo 20"
+      ],
+      "hybrid": [
+        "Artículo 20",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 23"
+      ],
+      "vector": [
+        "Artículo 20",
+        "Artículo 29",
+        "Artículo 22",
+        "Artículo 28",
+        "Artículo 21"
+      ],
+      "text": [
+        "Artículo 16",
+        "Artículo 40",
+        "Artículo 41",
+        "Artículo 20",
+        "Artículo 39"
+      ]
+    },
+    {
+      "id": "c06",
+      "expected": [
+        "Artículo 10"
+      ],
+      "hybrid": [
+        "Artículo 10",
+        "Artículo 24",
+        "Artículo 23",
+        "Disposición adicional séptima",
+        "Anexo III · Cláusula cuarta"
+      ],
+      "vector": [
+        "Artículo 10",
+        "Anexo III · Cláusula cuarta",
+        "Artículo 33",
+        "Artículo 40",
+        "Artículo 16"
+      ],
+      "text": [
+        "Artículo 10",
+        "Disposición adicional séptima",
+        "Artículo 30",
+        "Artículo 15",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "c07",
+      "expected": [
+        "Artículo 32"
+      ],
+      "hybrid": [
+        "Artículo 32",
+        "Artículo 12",
+        "Artículo 23",
+        "Artículo 36",
+        "Artículo 38 bis"
+      ],
+      "vector": [
+        "Artículo 32",
+        "Artículo 20",
+        "Artículo 12",
+        "Artículo 16",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 36",
+        "Artículo 40",
+        "Artículo 12",
+        "Artículo 23",
+        "Artículo 32"
+      ]
+    },
+    {
+      "id": "c08",
+      "expected": [
+        "Artículo 32"
+      ],
+      "hybrid": [
+        "Artículo 32",
+        "Artículo 22",
+        "Artículo 24",
+        "Artículo 16",
+        "Artículo 12"
+      ],
+      "vector": [
+        "Artículo 22",
+        "Artículo 24",
+        "Artículo 16",
+        "Artículo 32",
+        "Artículo 17"
+      ],
+      "text": [
+        "Artículo 32",
+        "Artículo 39",
+        "Anexo III · Cláusula cuarta",
+        "Artículo 12",
+        "Artículo 16"
+      ]
+    },
+    {
+      "id": "c09",
+      "expected": [
+        "Artículo 23"
+      ],
+      "hybrid": [
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 29",
+        "Artículo 15"
+      ],
+      "vector": [
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 41"
+      ],
+      "text": [
+        "Artículo 23",
+        "Artículo 15",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c10",
+      "expected": [
+        "Artículo 23"
+      ],
+      "hybrid": [
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 40",
+        "Artículo 16",
+        "Artículo 25"
+      ],
+      "vector": [
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 28"
+      ],
+      "text": [
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 25",
+        "Artículo 16",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c11",
+      "expected": [
+        "Artículo 28"
+      ],
+      "hybrid": [
+        "Artículo 28",
+        "Artículo 29",
+        "Artículo 27",
+        "Artículo 32",
+        "Artículo 20"
+      ],
+      "vector": [
+        "Artículo 28",
+        "Artículo 29",
+        "Artículo 27",
+        "Artículo 20",
+        "Artículo 41"
+      ],
+      "text": [
+        "Artículo 28",
+        "Artículo 29",
+        "Artículo 32",
+        "Anexo III · Cláusula cuarta",
+        "Artículo 27"
+      ]
+    },
+    {
+      "id": "c12",
+      "expected": [
+        "Artículo 28"
+      ],
+      "hybrid": [
+        "Artículo 28",
+        "Artículo 23",
+        "Anexo I",
+        "Artículo 27",
+        "Artículo 33"
+      ],
+      "vector": [
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 27",
+        "Anexo I",
+        "Artículo 33"
+      ],
+      "text": [
+        "Artículo 28",
+        "Artículo 15",
+        "Anexo I",
+        "Artículo 23",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c13",
+      "expected": [
+        "Artículo 26"
+      ],
+      "hybrid": [
+        "Artículo 23",
+        "Artículo 26",
+        "Disposición adicional quinta",
+        "Artículo 24",
+        "Disposición adicional sexta"
+      ],
+      "vector": [
+        "Artículo 26",
+        "Artículo 30",
+        "Artículo 32",
+        "Artículo 24",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 23",
+        "Artículo 24",
+        "Disposición adicional quinta",
+        "Artículo 36",
+        "Artículo 40"
+      ]
+    },
+    {
+      "id": "c14",
+      "expected": [
+        "Artículo 30"
+      ],
+      "hybrid": [
+        "Artículo 30",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 39",
+        "Artículo 32"
+      ],
+      "vector": [
+        "Artículo 30",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 20",
+        "Artículo 33"
+      ],
+      "text": [
+        "Artículo 30",
+        "Artículo 40",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 39"
+      ]
+    },
+    {
+      "id": "c15",
+      "expected": [
+        "Artículo 14"
+      ],
+      "hybrid": [
+        "Disposición adicional primera",
+        "Artículo 1",
+        "Artículo 14",
+        "Artículo 16",
+        "Artículo 36"
+      ],
+      "vector": [
+        "Artículo 14",
+        "Disposición adicional primera",
+        "Artículo 15",
+        "Artículo 11",
+        "Disposición adicional séptima"
+      ],
+      "text": [
+        "Disposición adicional primera",
+        "Artículo 36",
+        "Artículo 1",
+        "Artículo 16",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "c16",
+      "expected": [
+        "Artículo 25"
+      ],
+      "hybrid": [
+        "Disposición adicional quinta",
+        "Disposición adicional sexta",
+        "Artículo 25",
+        "Artículo 31",
+        "Artículo 33"
+      ],
+      "vector": [
+        "Disposición adicional quinta",
+        "Disposición adicional sexta",
+        "Artículo 8",
+        "Artículo 31",
+        "Artículo 33"
+      ],
+      "text": [
+        "Disposición adicional quinta",
+        "Artículo 25",
+        "Artículo 39",
+        "Disposición adicional sexta",
+        "Artículo 15"
+      ]
+    },
+    {
+      "id": "c17",
+      "expected": [
+        "Artículo 41"
+      ],
+      "hybrid": [
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 21",
+        "Artículo 15"
+      ],
+      "vector": [
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 15",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 15",
+        "Artículo 40",
+        "Artículo 39",
+        "Artículo 41",
+        "Artículo 1"
+      ]
+    },
+    {
+      "id": "c18",
+      "expected": [
+        "Artículo 33"
+      ],
+      "hybrid": [
+        "Artículo 33",
+        "Artículo 29",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 30"
+      ],
+      "vector": [
+        "Artículo 33",
+        "Artículo 21",
+        "Artículo 20",
+        "Artículo 30",
+        "Artículo 29"
+      ],
+      "text": [
+        "Artículo 33",
+        "Artículo 15",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "m01",
+      "expected": [
+        "Artículo 31"
+      ],
+      "hybrid": [
+        "Artículo 31",
+        "Artículo 32",
+        "Artículo 37",
+        "Artículo 30",
+        "Artículo 34"
+      ],
+      "vector": [
+        "Artículo 31",
+        "Disposición transitoria tercera",
+        "Artículo 30",
+        "Artículo 34",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 31",
+        "Artículo 35",
+        "Artículo 33",
+        "Artículo 37",
+        "Artículo 32"
+      ]
+    },
+    {
+      "id": "m02",
+      "expected": [
+        "Artículo 31"
+      ],
+      "hybrid": [
+        "Artículo 31",
+        "Artículo 30",
+        "Artículo 34",
+        "Artículo 32",
+        "Artículo 33"
+      ],
+      "vector": [
+        "Artículo 31",
+        "Artículo 30",
+        "Artículo 34",
+        "Artículo 67",
+        "Disposición transitoria tercera"
+      ],
+      "text": [
+        "Artículo 31",
+        "Artículo 33",
+        "Artículo 32",
+        "Artículo 30",
+        "Artículo 34"
+      ]
+    },
+    {
+      "id": "m03",
+      "expected": [
+        "Artículo 46"
+      ],
+      "hybrid": [
+        "Anexo VI",
+        "Anexo III",
+        "Anexo IV",
+        "Artículo 46",
+        "Anexo IX"
+      ],
+      "vector": [
+        "Artículo 46",
+        "Anexo VI",
+        "Anexo I",
+        "Anexo IV",
+        "Anexo II"
+      ],
+      "text": [
+        "Anexo III",
+        "Anexo IX",
+        "Anexo VI",
+        "Artículo 25",
+        "Artículo 48"
+      ]
+    },
+    {
+      "id": "m04",
+      "expected": [
+        "Artículo 67"
+      ],
+      "hybrid": [
+        "Artículo 67",
+        "Artículo 63",
+        "Artículo 64",
+        "Artículo 66",
+        "Artículo 65"
+      ],
+      "vector": [
+        "Artículo 67",
+        "Artículo 63",
+        "Anexo VII · Artículo 5",
+        "Artículo 64",
+        "Artículo 65"
+      ],
+      "text": [
+        "Artículo 67",
+        "Artículo 62",
+        "Artículo 63",
+        "Artículo 64",
+        "Artículo 66"
+      ]
+    },
+    {
+      "id": "m05",
+      "expected": [
+        "Artículo 67"
+      ],
+      "hybrid": [
+        "Artículo 67",
+        "Artículo 65",
+        "Artículo 64",
+        "Artículo 66",
+        "Artículo 63"
+      ],
+      "vector": [
+        "Artículo 67",
+        "Artículo 65",
+        "Artículo 64",
+        "Artículo 63",
+        "Anexo VII · Artículo 5"
+      ],
+      "text": [
+        "Artículo 65",
+        "Artículo 62",
+        "Artículo 64",
+        "Artículo 67",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "m06",
+      "expected": [
+        "Artículo 84"
+      ],
+      "hybrid": [
+        "Artículo 84",
+        "Artículo 48",
+        "Anexo I",
+        "Artículo 80",
+        "Anexo IX"
+      ],
+      "vector": [
+        "Artículo 84",
+        "Anexo I",
+        "Artículo 80",
+        "Anexo VI",
+        "Anexo II"
+      ],
+      "text": [
+        "Artículo 84",
+        "Artículo 48",
+        "Anexo IX",
+        "Anexo IV",
+        "Anexo VIII"
+      ]
+    },
+    {
+      "id": "m07",
+      "expected": [
+        "Artículo 44"
+      ],
+      "hybrid": [
+        "Artículo 44",
+        "Artículo 31",
+        "Artículo 26",
+        "Artículo 63",
+        "Artículo 23"
+      ],
+      "vector": [
+        "Artículo 44",
+        "Artículo 43",
+        "Disposición transitoria tercera",
+        "Artículo 67",
+        "Disposición transitoria quinta"
+      ],
+      "text": [
+        "Artículo 44",
+        "Artículo 26",
+        "Artículo 31",
+        "Artículo 23",
+        "Artículo 63"
+      ]
+    },
+    {
+      "id": "m08",
+      "expected": [
+        "Artículo 44"
+      ],
+      "hybrid": [
+        "Artículo 44",
+        "Artículo 45",
+        "Artículo 42",
+        "Artículo 43",
+        "Artículo 25"
+      ],
+      "vector": [
+        "Artículo 44",
+        "Artículo 45",
+        "Artículo 80",
+        "Artículo 43",
+        "Artículo 48"
+      ],
+      "text": [
+        "Artículo 44",
+        "Artículo 25",
+        "Anexo IX",
+        "Artículo 23",
+        "Artículo 42"
+      ]
+    },
+    {
+      "id": "m09",
+      "expected": [
+        "Artículo 49"
+      ],
+      "hybrid": [
+        "Artículo 48",
+        "Anexo IX",
+        "Artículo 45",
+        "Artículo 49",
+        "Artículo 43"
+      ],
+      "vector": [
+        "Artículo 43",
+        "Artículo 48",
+        "Artículo 45",
+        "Artículo 47",
+        "Anexo VII · Artículo 1"
+      ],
+      "text": [
+        "Artículo 48",
+        "Anexo IX",
+        "Anexo VI",
+        "Anexo IV",
+        "Artículo 42"
+      ]
+    },
+    {
+      "id": "m10",
+      "expected": [
+        "Artículo 5"
+      ],
+      "hybrid": [
+        "Artículo 10",
+        "Artículo 26",
+        "Artículo 5",
+        "Artículo 46",
+        "Artículo 16"
+      ],
+      "vector": [
+        "Disposición transitoria séptima",
+        "Artículo 10",
+        "Artículo 26",
+        "Artículo 103",
+        "Artículo 94"
+      ],
+      "text": [
+        "Anexo VIII",
+        "Artículo 10",
+        "Anexo I",
+        "Artículo 5",
+        "Artículo 2"
+      ]
+    },
+    {
+      "id": "m11",
+      "expected": [
+        "Artículo 121"
+      ],
+      "hybrid": [
+        "Artículo 42",
+        "Artículo 37",
+        "Artículo 121",
+        "Anexo IX",
+        "Artículo 48"
+      ],
+      "vector": [
+        "Artículo 121",
+        "Artículo 48",
+        "Artículo 37",
+        "Artículo 113",
+        "Artículo 101"
+      ],
+      "text": [
+        "Anexo IX",
+        "Artículo 78",
+        "Artículo 33",
+        "Artículo 42",
+        "Artículo 43"
+      ]
+    },
+    {
+      "id": "m12",
+      "expected": [
+        "Artículo 50"
+      ],
+      "hybrid": [
+        "Artículo 46",
+        "Anexo VIII",
+        "Artículo 11",
+        "Anexo IV",
+        "Anexo I"
+      ],
+      "vector": [
+        "Artículo 46",
+        "Anexo IV",
+        "Artículo 52",
+        "Anexo II",
+        "Artículo 26"
+      ],
+      "text": [
+        "Anexo VIII",
+        "Artículo 11",
+        "Anexo I",
+        "Artículo 97",
+        "Artículo 88"
+      ]
+    }
+  ],
+  "provider": "openai",
+  "answers": {
+    "hybrid": {
+      "summary": {
+        "answerable": 30,
+        "correct": 29,
+        "correct_pct": 96.7,
+        "cites_expected_pct": 96.7,
+        "facts_ok_pct": 96.7,
+        "not_found_on_answerable": 1,
+        "wrong_answers": 0,
+        "tricks": 5,
+        "tricks_refused": 5,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "seconds_per_question_mean": 1.3,
+        "input_tokens": 101799,
+        "output_tokens": 1864,
+        "cost_usd": 0.0437
+      },
+      "details": [
+        {
+          "id": "c01",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 21"
+          ],
+          "expected": [
+            "Artículo 21"
+          ],
+          "facts_ok": true,
+          "answer": "Tienes derecho a veintitrés (23) días laborables de vacaciones anuales retribuidas. Si la empresa tiene dos o más meses de jornada intensiva o concede dos o más días no laborables adicionales a los festivos, disfrutarás de veintidós (22) días laborables de vacaciones."
+        },
+        {
+          "id": "c02",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 22"
+          ],
+          "expected": [
+            "Artículo 22"
+          ],
+          "facts_ok": true,
+          "answer": "El permiso por matrimonio o registro de pareja de hecho es de quince días naturales, comenzando el día laboral inmediato siguiente al hecho causante si este no es laborable."
+        },
+        {
+          "id": "c03",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 22"
+          ],
+          "expected": [
+            "Artículo 22"
+          ],
+          "facts_ok": true,
+          "answer": "Tienes derecho a cinco días laborables de permiso retribuido por hospitalización de tu padre, según el convenio. En caso de hospitalización, los días pueden disfrutarse de manera discontinua mientras exista la causa que los genera."
+        },
+        {
+          "id": "c04",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 20"
+          ],
+          "expected": [
+            "Artículo 20"
+          ],
+          "facts_ok": true,
+          "answer": "La jornada ordinaria máxima de trabajo efectivo es de 1.800 horas anuales. No se podrán realizar más de nueve horas ordinarias diarias de trabajo efectivo."
+        },
+        {
+          "id": "c05",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 20"
+          ],
+          "expected": [
+            "Artículo 20"
+          ],
+          "facts_ok": true,
+          "answer": "Según el convenio colectivo, no se podrán realizar más de nueve horas ordinarias diarias de trabajo efectivo."
+        },
+        {
+          "id": "c06",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 10"
+          ],
+          "expected": [
+            "Artículo 10"
+          ],
+          "facts_ok": true,
+          "answer": "El período de prueba para una persona del grupo A es de seis meses en todas las áreas funcionales del convenio."
+        },
+        {
+          "id": "c07",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 32"
+          ],
+          "expected": [
+            "Artículo 32"
+          ],
+          "facts_ok": true,
+          "answer": "Debes avisar por escrito a la Dirección de la empresa con un mínimo de quince días laborables de antelación, según el calendario laboral del centro de trabajo donde prestes servicios. Si no se realiza este preaviso, perderás la parte proporcional de la paga extraordinaria de julio o diciembre que esté devengada como resarcimiento."
+        },
+        {
+          "id": "c08",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 32"
+          ],
+          "expected": [
+            "Artículo 32"
+          ],
+          "facts_ok": true,
+          "answer": "Si dimites sin avisar con al menos quince días laborables de antelación, perderás la parte proporcional de la paga extraordinaria de julio o diciembre que esté devengada como resarcimiento a la empresa. En caso de preaviso parcial, la penalización será proporcional a los días que falten para completar los quince días."
+        },
+        {
+          "id": "c09",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 23"
+          ],
+          "expected": [
+            "Artículo 23"
+          ],
+          "facts_ok": true,
+          "answer": "Sí, puedes pedir un permiso sin sueldo si tienes una antigüedad mínima de un año en la empresa. El permiso sin sueldo puede ser por un máximo de un mes y por una sola vez cada año, o fraccionado en dos períodos máximos de quince días naturales, uno en cada semestre del año."
+        },
+        {
+          "id": "c10",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 23"
+          ],
+          "expected": [
+            "Artículo 23"
+          ],
+          "facts_ok": true,
+          "answer": "Para solicitar un permiso sin sueldo necesitas tener una antigüedad mínima de un año en la empresa."
+        },
+        {
+          "id": "c11",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 28"
+          ],
+          "expected": [
+            "Artículo 28"
+          ],
+          "facts_ok": true,
+          "answer": "Las pagas extraordinarias de julio y diciembre deben hacerse efectivas entre los días 15 y 20, ambos inclusive, de los respectivos meses. Se pagan en proporción al tiempo trabajado en el semestre natural anterior para la paga de julio y en el segundo semestre para la de diciembre."
+        },
+        {
+          "id": "c12",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 28"
+          ],
+          "expected": [
+            "Artículo 28"
+          ],
+          "facts_ok": true,
+          "answer": "Sí, a petición de la persona trabajadora y si la empresa lo autoriza, el salario bruto anual puede pagarse en doce pagas en lugar de catorce."
+        },
+        {
+          "id": "c13",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 26"
+          ],
+          "expected": [
+            "Artículo 26"
+          ],
+          "facts_ok": true,
+          "answer": "Sí, la empresa complementará las prestaciones por incapacidad temporal desde el quinto día de la baja, inclusive, en enfermedad de más de treinta días, hasta el 100% del salario durante un plazo máximo de doce meses."
+        },
+        {
+          "id": "c14",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 30"
+          ],
+          "expected": [
+            "Artículo 30"
+          ],
+          "facts_ok": true,
+          "answer": "La dieta completa para desplazamientos en territorio español es de 57,20 euros para las personas trabajadoras que presten servicios en las áreas 1 a 6, salvo excepciones específicas. Esta cantidad se incrementará a 58,92 euros a partir del 1 de enero de 2026 y a 60,69 euros a partir del 1 de enero de 2027."
+        },
+        {
+          "id": "c15",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 14"
+          ],
+          "expected": [
+            "Artículo 14"
+          ],
+          "facts_ok": true,
+          "answer": "La empresa puede conceder una bolsa anual de 218,10 euros para formación profesional, que se reconoce según el aprovechamiento anterior y el interés de los estudios para la empresa."
+        },
+        {
+          "id": "c16",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 25"
+          ],
+          "expected": [
+            "Artículo 25"
+          ],
+          "facts_ok": true,
+          "answer": "El complemento de antigüedad consiste en bonificaciones por años de servicio que se aplican en trienios con porcentajes que varían del 5% al 10% sobre el salario base pactado para el área/grupo/nivel. Los trienios se devengan a partir del 1 de enero del año en que se cumplen y se abonan según el último salario base de convenio. Además, para ciertos trabajadores con condiciones más beneficiosas previas, la antigüedad no será absorbible y tiene límites máximos de acumulación."
+        },
+        {
+          "id": "c17",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 41"
+          ],
+          "expected": [
+            "Artículo 41"
+          ],
+          "facts_ok": true,
+          "answer": "El trabajo a distancia es voluntario tanto para la persona trabajadora como para la empresa y requiere la firma de un acuerdo de trabajo a distancia. Si el teletrabajo no forma parte de la descripción inicial del puesto, puede ser reversible con un preaviso de 30 días naturales o el que establezcan los acuerdos individuales o colectivos. Por tanto, no pueden obligarte a teletrabajar sin tu consentimiento."
+        },
+        {
+          "id": "c18",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 33"
+          ],
+          "expected": [
+            "Artículo 33"
+          ],
+          "facts_ok": true,
+          "answer": "La excedencia voluntaria puede durar un plazo no menor a cuatro meses y no mayor a cinco años, siempre que el trabajador tenga al menos un año de antigüedad en la empresa."
+        },
+        {
+          "id": "m01",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 31"
+          ],
+          "expected": [
+            "Artículo 31"
+          ],
+          "facts_ok": true,
+          "answer": "El período de prueba para el grupo profesional 3 es de hasta dos meses."
+        },
+        {
+          "id": "m02",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 31"
+          ],
+          "expected": [
+            "Artículo 31"
+          ],
+          "facts_ok": true,
+          "answer": "El período de prueba para el grupo 6 es de hasta 15 días."
+        },
+        {
+          "id": "m03",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 46"
+          ],
+          "expected": [
+            "Artículo 46"
+          ],
+          "facts_ok": true,
+          "answer": "La duración máxima de la jornada ordinaria de trabajo para el sector del metal será, en cómputo anual, la establecida actualmente en los convenios colectivos sectoriales o subsectoriales de ámbito inferior. Estos convenios pueden establecer jornadas inferiores a la máxima anual establecida en su ámbito, así como su distribución irregular."
+        },
+        {
+          "id": "m04",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 67"
+          ],
+          "expected": [
+            "Artículo 67"
+          ],
+          "facts_ok": true,
+          "answer": "Las faltas leves prescriben a los diez días desde que la empresa tuvo conocimiento de su comisión, y en todo caso a los seis meses de haberse cometido."
+        },
+        {
+          "id": "m05",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 67"
+          ],
+          "expected": [
+            "Artículo 67"
+          ],
+          "facts_ok": true,
+          "answer": "Las faltas muy graves prescriben a los sesenta días. La prescripción empieza a contar desde la fecha en que la empresa tuvo conocimiento de la falta y, en todo caso, a los seis meses de haberse cometido."
+        },
+        {
+          "id": "m06",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 84"
+          ],
+          "expected": [
+            "Artículo 84"
+          ],
+          "facts_ok": true,
+          "answer": "La empresa debe proporcionar a cada persona trabajadora que requiera ropa de trabajo dos equipamientos completos adaptados a las condiciones termohigrométricas. Además, el equipo necesario se entregará al inicio de la actividad para las personas de nueva contratación."
+        },
+        {
+          "id": "m07",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 44"
+          ],
+          "expected": [
+            "Artículo 44"
+          ],
+          "facts_ok": true,
+          "answer": "En caso de desplazamiento superior a tres meses, el empresario deberá preavisar al trabajador con un mínimo de cinco días de antelación, por escrito, indicando las condiciones y duración prevista."
+        },
+        {
+          "id": "m08",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 44"
+          ],
+          "expected": [
+            "Artículo 44"
+          ],
+          "facts_ok": true,
+          "answer": "Un desplazamiento a otro centro puede durar como máximo doce meses dentro de un período de tres años."
+        },
+        {
+          "id": "m09",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 49"
+          ],
+          "expected": [
+            "Artículo 49"
+          ],
+          "facts_ok": true,
+          "answer": "Sí, tienes derecho a la desconexión digital para garantizar el respeto de tu tiempo de descanso, permisos y vacaciones, así como de tu intimidad personal y familiar. Las empresas no pueden sancionarte por ejercer este derecho. Además, los convenios colectivos pueden establecer garantías adicionales para este derecho."
+        },
+        {
+          "id": "m10",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 5"
+          ],
+          "expected": [
+            "Artículo 5"
+          ],
+          "facts_ok": true,
+          "answer": "El convenio del metal está vigente desde el 1 de enero de 2021 hasta el 31 de diciembre de 2023. Después de esa fecha, quedará denunciado automáticamente, pero continuará vigente hasta que sea sustituido por otro convenio. Además, durante su vigencia, las partes pueden proponer su revisión o la negociación de nuevas materias."
+        },
+        {
+          "id": "m11",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 121"
+          ],
+          "expected": [
+            "Artículo 121"
+          ],
+          "facts_ok": true,
+          "answer": "La empresa puede utilizar sistemas de geolocalización para controlar a las personas trabajadoras, pero debe respetar su derecho a la intimidad y tratar los datos conforme al marco legal. Además, debe informar de forma expresa, clara e inequívoca sobre la existencia y características de estos dispositivos, y garantizar que cesen al finalizar la jornada laboral. También se negociará la articulación de los derechos de acceso, rectificación, limitación del tratamiento y supresión."
+        },
+        {
+          "id": "m12",
+          "correct": false,
+          "found": false,
+          "cited": [],
+          "expected": [
+            "Artículo 50"
+          ],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t01",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t02",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t03",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t04",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t05",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        }
+      ]
+    },
+    "vector": {
+      "summary": {
+        "answerable": 30,
+        "correct": 26,
+        "correct_pct": 86.7,
+        "cites_expected_pct": 86.7,
+        "facts_ok_pct": 90.0,
+        "not_found_on_answerable": 2,
+        "wrong_answers": 2,
+        "tricks": 5,
+        "tricks_refused": 5,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "seconds_per_question_mean": 1.48,
+        "input_tokens": 102075,
+        "output_tokens": 1864,
+        "cost_usd": 0.0438
+      },
+      "details": [
+        {
+          "id": "c01",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 21"
+          ],
+          "expected": [
+            "Artículo 21"
+          ],
+          "facts_ok": true,
+          "answer": "Tienes derecho a veintitrés (23) días laborables de vacaciones anuales retribuidas, salvo que la empresa tenga jornada intensiva de dos o más meses o conceda días no laborables adicionales, en cuyo caso serían veintidós (22) días laborables."
+        },
+        {
+          "id": "c02",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 22"
+          ],
+          "expected": [
+            "Artículo 22"
+          ],
+          "facts_ok": true,
+          "answer": "Tienes derecho a quince días naturales de permiso retribuido en caso de matrimonio o registro de pareja de hecho. Este permiso se iniciará el día laboral inmediato siguiente al que se produzca el hecho causante, si éste no es laborable."
+        },
+        {
+          "id": "c03",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 22"
+          ],
+          "expected": [
+            "Artículo 22"
+          ],
+          "facts_ok": true,
+          "answer": "Tienes derecho a cinco días laborables de permiso retribuido por hospitalización de tu padre, según el convenio. Estos días pueden disfrutarse de manera discontinua mientras exista la causa que los genera."
+        },
+        {
+          "id": "c04",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 20"
+          ],
+          "expected": [
+            "Artículo 20"
+          ],
+          "facts_ok": true,
+          "answer": "La jornada ordinaria máxima de trabajo efectivo es de 1.800 horas anuales. No se podrán realizar más de nueve horas ordinarias diarias de trabajo efectivo. Además, ninguna fiesta laboral será recuperable."
+        },
+        {
+          "id": "c05",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 20"
+          ],
+          "expected": [
+            "Artículo 20"
+          ],
+          "facts_ok": true,
+          "answer": "Según el convenio, no se podrán realizar más de nueve horas ordinarias diarias de trabajo efectivo."
+        },
+        {
+          "id": "c06",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 10"
+          ],
+          "expected": [
+            "Artículo 10"
+          ],
+          "facts_ok": true,
+          "answer": "El periodo de prueba para una persona del grupo A es de seis meses en todas las áreas funcionales del convenio colectivo."
+        },
+        {
+          "id": "c07",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 32"
+          ],
+          "expected": [
+            "Artículo 32"
+          ],
+          "facts_ok": true,
+          "answer": "Debes avisar por escrito a la Dirección de la empresa con un mínimo de quince días laborables de antelación, según el calendario laboral del centro de trabajo donde prestes servicios. Si no se realiza este preaviso, perderás la parte proporcional de la paga extraordinaria de julio o diciembre que esté devengada como resarcimiento. En caso de preaviso menor, la penalización será proporcional a los días que falten para completar los quince días laborables."
+        },
+        {
+          "id": "c08",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 32"
+          ],
+          "expected": [
+            "Artículo 32"
+          ],
+          "facts_ok": true,
+          "answer": "Si dimites sin avisar con al menos quince días laborables de antelación, perderás la parte proporcional de la paga extraordinaria de julio o diciembre que esté devengada como resarcimiento por los daños y perjuicios causados a la empresa. Si el preaviso es menor a quince días, la penalización será proporcional a los días que falten para completar los quince días."
+        },
+        {
+          "id": "c09",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 23"
+          ],
+          "expected": [
+            "Artículo 23"
+          ],
+          "facts_ok": true,
+          "answer": "Sí, puedes pedir un permiso sin sueldo si tienes una antigüedad mínima de un año en la empresa. El permiso sin sueldo puede ser por un máximo de un mes y por una sola vez cada año, o fraccionado en dos períodos máximos de quince días naturales, uno en cada semestre del año."
+        },
+        {
+          "id": "c10",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 23"
+          ],
+          "expected": [
+            "Artículo 23"
+          ],
+          "facts_ok": true,
+          "answer": "Para solicitar un permiso sin sueldo se requiere una antigüedad mínima de un año en la empresa."
+        },
+        {
+          "id": "c11",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 28"
+          ],
+          "expected": [
+            "Artículo 28"
+          ],
+          "facts_ok": true,
+          "answer": "Las pagas extraordinarias de julio y diciembre deben hacerse efectivas entre los días 15 y 20, ambos inclusive, de los respectivos meses. Se pagan en proporción al tiempo trabajado en el semestre natural anterior para la paga de julio y en el segundo semestre para la de diciembre."
+        },
+        {
+          "id": "c12",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 28"
+          ],
+          "expected": [
+            "Artículo 28"
+          ],
+          "facts_ok": true,
+          "answer": "Sí, a petición de la persona trabajadora y si la empresa lo autoriza, el salario bruto anual puede pagarse en doce pagas en lugar de catorce."
+        },
+        {
+          "id": "c13",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 26"
+          ],
+          "expected": [
+            "Artículo 26"
+          ],
+          "facts_ok": true,
+          "answer": "Sí, la empresa complementará las prestaciones por incapacidad temporal desde el quinto día de baja en enfermedad de más de treinta días, hasta el 100% del salario durante un plazo máximo de doce meses."
+        },
+        {
+          "id": "c14",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 30"
+          ],
+          "expected": [
+            "Artículo 30"
+          ],
+          "facts_ok": true,
+          "answer": "La dieta completa para desplazamientos en territorio español es de 57,20 euros para las personas trabajadoras en las áreas 1 a 6, salvo excepciones específicas. Esta cantidad se incrementará a 58,92 euros a partir del 1 de enero de 2026 y a 60,69 euros a partir del 1 de enero de 2027."
+        },
+        {
+          "id": "c15",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 14",
+            "Disposición adicional primera"
+          ],
+          "expected": [
+            "Artículo 14"
+          ],
+          "facts_ok": true,
+          "answer": "La empresa puede conceder una bolsa anual de 218,10 euros para formación profesional, que se reconoce según el aprovechamiento y el interés para la empresa. Además, existe una Comisión Paritaria Sectorial de Formación Continua que promueve y gestiona iniciativas de formación en el sector. Por tanto, sí hay ayuda para estudios o formación."
+        },
+        {
+          "id": "c16",
+          "correct": false,
+          "found": true,
+          "cited": [
+            "Disposición adicional quinta",
+            "Artículo 31"
+          ],
+          "expected": [
+            "Artículo 25"
+          ],
+          "facts_ok": false,
+          "answer": "El complemento de antigüedad se calcula incluyendo el complemento «ex salario base 2022» que debe percibir cada persona trabajadora. De estos complementos no se podrá detraer cantidad alguna por ninguna causa o circunstancia, salvo en los casos detallados en el convenio. Además, el Plus de Convenio no se computa para el cálculo del complemento de antigüedad."
+        },
+        {
+          "id": "c17",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 41"
+          ],
+          "expected": [
+            "Artículo 41"
+          ],
+          "facts_ok": true,
+          "answer": "El trabajo a distancia será voluntario para la persona trabajadora y para la empresa, y requiere la firma de un acuerdo de trabajo a distancia. Por tanto, no pueden obligarte a teletrabajar sin tu consentimiento. Además, si el teletrabajo no forma parte de la descripción inicial del puesto, puede ser reversible con un preaviso de 30 días naturales si no hay otro acuerdo."
+        },
+        {
+          "id": "c18",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 33"
+          ],
+          "expected": [
+            "Artículo 33"
+          ],
+          "facts_ok": true,
+          "answer": "La excedencia voluntaria puede durar un plazo no menor a cuatro meses y no mayor a cinco años. Este derecho solo podrá ser ejercitado otra vez por el mismo trabajador si han transcurrido cuatro años desde el final de la anterior excedencia voluntaria."
+        },
+        {
+          "id": "m01",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 31"
+          ],
+          "expected": [
+            "Artículo 31"
+          ],
+          "facts_ok": true,
+          "answer": "El período de prueba para el grupo profesional 3 es de hasta dos meses."
+        },
+        {
+          "id": "m02",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 31"
+          ],
+          "expected": [
+            "Artículo 31"
+          ],
+          "facts_ok": true,
+          "answer": "El período de prueba para el grupo 6 es de hasta 15 días."
+        },
+        {
+          "id": "m03",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 46"
+          ],
+          "expected": [
+            "Artículo 46"
+          ],
+          "facts_ok": true,
+          "answer": "La duración máxima de la jornada ordinaria de trabajo para el sector del metal se establece en cómputo anual según los convenios colectivos sectoriales o subsectoriales de ámbito inferior. Estos convenios pueden acordar una jornada máxima anual única dentro de su ámbito."
+        },
+        {
+          "id": "m04",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 67",
+            "Anexo VII · Artículo 5"
+          ],
+          "expected": [
+            "Artículo 67"
+          ],
+          "facts_ok": true,
+          "answer": "Las faltas leves prescriben a los diez días desde que la empresa tuvo conocimiento de su comisión y, en todo caso, a los seis meses de haberse cometido. Además, según el Anexo VII, las infracciones leves prescriben al año desde que la FMF tuvo conocimiento de su comisión."
+        },
+        {
+          "id": "m05",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 67",
+            "Anexo VII · Artículo 5"
+          ],
+          "expected": [
+            "Artículo 67"
+          ],
+          "facts_ok": true,
+          "answer": "Las faltas muy graves prescriben a los sesenta días desde que la empresa tuvo conocimiento de su comisión, y en todo caso a los seis meses de haberse cometido. Además, según el Anexo VII, las infracciones muy graves prescriben a los cinco años desde que la FMF tuvo conocimiento de su comisión."
+        },
+        {
+          "id": "m06",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 84"
+          ],
+          "expected": [
+            "Artículo 84"
+          ],
+          "facts_ok": true,
+          "answer": "La empresa debe proporcionar a cada persona trabajadora dos equipamientos completos de ropa de trabajo adaptados a las condiciones termohigrométricas. Además, el equipo necesario se entregará al inicio de la actividad para las personas de nueva contratación."
+        },
+        {
+          "id": "m07",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 44"
+          ],
+          "expected": [
+            "Artículo 44"
+          ],
+          "facts_ok": true,
+          "answer": "En caso de desplazamiento superior a tres meses, el empresario deberá preavisar al trabajador con un mínimo de cinco días de antelación, por escrito, indicando las condiciones y duración prevista."
+        },
+        {
+          "id": "m08",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 44"
+          ],
+          "expected": [
+            "Artículo 44"
+          ],
+          "facts_ok": true,
+          "answer": "El desplazamiento a un lugar distinto del centro de trabajo habitual puede durar un máximo de doce meses dentro de un período de tres años."
+        },
+        {
+          "id": "m09",
+          "correct": false,
+          "found": true,
+          "cited": [
+            "Artículo 48"
+          ],
+          "expected": [
+            "Artículo 49"
+          ],
+          "facts_ok": true,
+          "answer": "El convenio establece que debe garantizarse la desconexión digital, lo que implica que tienes derecho a no contestar mensajes fuera de tu horario laboral. Además, el horario de trabajo y los tiempos de disponibilidad deben concretarse en el acuerdo de trabajo a distancia o teletrabajo."
+        },
+        {
+          "id": "m10",
+          "correct": false,
+          "found": false,
+          "cited": [],
+          "expected": [
+            "Artículo 5"
+          ],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "m11",
+          "correct": true,
+          "found": true,
+          "cited": [
+            "Artículo 121"
+          ],
+          "expected": [
+            "Artículo 121"
+          ],
+          "facts_ok": true,
+          "answer": "La empresa puede utilizar sistemas de geolocalización para controlar a los trabajadores, pero debe respetar su derecho a la intimidad y tratar los datos conforme al marco legal. Además, debe informar de forma expresa, clara e inequívoca sobre la existencia y características de estos dispositivos, y garantizar que cesen al finalizar la jornada laboral."
+        },
+        {
+          "id": "m12",
+          "correct": false,
+          "found": false,
+          "cited": [],
+          "expected": [
+            "Artículo 50"
+          ],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t01",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t02",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t03",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t04",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        },
+        {
+          "id": "t05",
+          "correct": true,
+          "found": false,
+          "cited": [],
+          "expected": [],
+          "facts_ok": false,
+          "answer": "No he encontrado la respuesta en el convenio. Puede que no lo regule o que remita a otro convenio o a la ley; consulta el texto completo en el BOE."
+        }
+      ]
+    }
+  }
+}

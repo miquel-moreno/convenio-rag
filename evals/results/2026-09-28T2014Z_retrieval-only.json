@@ -1,0 +1,831 @@
+{
+  "run_at": "2026-09-28T20:14:00+00:00",
+  "questions": 35,
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "retrieval": {
+    "hybrid": {
+      "hit@5": 96.7,
+      "mrr": 0.811
+    },
+    "vector": {
+      "hit@5": 86.7,
+      "mrr": 0.808
+    },
+    "text": {
+      "hit@5": 76.7,
+      "mrr": 0.623
+    }
+  },
+  "retrieval_details": [
+    {
+      "id": "c01",
+      "expected": [
+        "Artículo 21"
+      ],
+      "hybrid": [
+        "Artículo 21",
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 30"
+      ],
+      "vector": [
+        "Artículo 21",
+        "Artículo 20",
+        "Artículo 28",
+        "Artículo 22",
+        "Artículo 29"
+      ],
+      "text": [
+        "Artículo 21",
+        "Artículo 28",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "c02",
+      "expected": [
+        "Artículo 22"
+      ],
+      "hybrid": [
+        "Artículo 22",
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 16",
+        "Artículo 21"
+      ],
+      "vector": [
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 23",
+        "Artículo 10",
+        "Artículo 20"
+      ],
+      "text": [
+        "Artículo 22",
+        "Artículo 24",
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 32"
+      ]
+    },
+    {
+      "id": "c03",
+      "expected": [
+        "Artículo 22"
+      ],
+      "hybrid": [
+        "Artículo 22",
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 16",
+        "Artículo 28"
+      ],
+      "vector": [
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 33",
+        "Artículo 23",
+        "Artículo 26"
+      ],
+      "text": [
+        "Artículo 22",
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 16",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c04",
+      "expected": [
+        "Artículo 20"
+      ],
+      "hybrid": [
+        "Artículo 20",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 29",
+        "Artículo 23"
+      ],
+      "vector": [
+        "Artículo 20",
+        "Artículo 29",
+        "Artículo 28",
+        "Artículo 21",
+        "Artículo 22"
+      ],
+      "text": [
+        "Artículo 40",
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 23",
+        "Artículo 39"
+      ]
+    },
+    {
+      "id": "c05",
+      "expected": [
+        "Artículo 20"
+      ],
+      "hybrid": [
+        "Artículo 20",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 23"
+      ],
+      "vector": [
+        "Artículo 20",
+        "Artículo 29",
+        "Artículo 22",
+        "Artículo 28",
+        "Artículo 21"
+      ],
+      "text": [
+        "Artículo 16",
+        "Artículo 40",
+        "Artículo 41",
+        "Artículo 20",
+        "Artículo 39"
+      ]
+    },
+    {
+      "id": "c06",
+      "expected": [
+        "Artículo 10"
+      ],
+      "hybrid": [
+        "Artículo 10",
+        "Artículo 24",
+        "Artículo 23",
+        "Disposición adicional séptima",
+        "Anexo III · Cláusula cuarta"
+      ],
+      "vector": [
+        "Artículo 10",
+        "Anexo III · Cláusula cuarta",
+        "Artículo 33",
+        "Artículo 40",
+        "Artículo 16"
+      ],
+      "text": [
+        "Artículo 10",
+        "Disposición adicional séptima",
+        "Artículo 30",
+        "Artículo 15",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "c07",
+      "expected": [
+        "Artículo 32"
+      ],
+      "hybrid": [
+        "Artículo 32",
+        "Artículo 12",
+        "Artículo 23",
+        "Artículo 36",
+        "Artículo 38 bis"
+      ],
+      "vector": [
+        "Artículo 32",
+        "Artículo 20",
+        "Artículo 12",
+        "Artículo 16",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 36",
+        "Artículo 40",
+        "Artículo 12",
+        "Artículo 23",
+        "Artículo 32"
+      ]
+    },
+    {
+      "id": "c08",
+      "expected": [
+        "Artículo 32"
+      ],
+      "hybrid": [
+        "Artículo 32",
+        "Artículo 22",
+        "Artículo 24",
+        "Artículo 16",
+        "Artículo 12"
+      ],
+      "vector": [
+        "Artículo 22",
+        "Artículo 24",
+        "Artículo 16",
+        "Artículo 32",
+        "Artículo 17"
+      ],
+      "text": [
+        "Artículo 32",
+        "Artículo 39",
+        "Anexo III · Cláusula cuarta",
+        "Artículo 12",
+        "Artículo 16"
+      ]
+    },
+    {
+      "id": "c09",
+      "expected": [
+        "Artículo 23"
+      ],
+      "hybrid": [
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 29",
+        "Artículo 15"
+      ],
+      "vector": [
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 41"
+      ],
+      "text": [
+        "Artículo 23",
+        "Artículo 15",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c10",
+      "expected": [
+        "Artículo 23"
+      ],
+      "hybrid": [
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 40",
+        "Artículo 16",
+        "Artículo 25"
+      ],
+      "vector": [
+        "Artículo 23",
+        "Artículo 40",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 28"
+      ],
+      "text": [
+        "Artículo 23",
+        "Artículo 22",
+        "Artículo 25",
+        "Artículo 16",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c11",
+      "expected": [
+        "Artículo 28"
+      ],
+      "hybrid": [
+        "Artículo 28",
+        "Artículo 29",
+        "Artículo 27",
+        "Artículo 32",
+        "Artículo 20"
+      ],
+      "vector": [
+        "Artículo 28",
+        "Artículo 29",
+        "Artículo 27",
+        "Artículo 20",
+        "Artículo 41"
+      ],
+      "text": [
+        "Artículo 28",
+        "Artículo 29",
+        "Artículo 32",
+        "Anexo III · Cláusula cuarta",
+        "Artículo 27"
+      ]
+    },
+    {
+      "id": "c12",
+      "expected": [
+        "Artículo 28"
+      ],
+      "hybrid": [
+        "Artículo 28",
+        "Artículo 23",
+        "Anexo I",
+        "Artículo 27",
+        "Artículo 33"
+      ],
+      "vector": [
+        "Artículo 28",
+        "Artículo 23",
+        "Artículo 27",
+        "Anexo I",
+        "Artículo 33"
+      ],
+      "text": [
+        "Artículo 28",
+        "Artículo 15",
+        "Anexo I",
+        "Artículo 23",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "c13",
+      "expected": [
+        "Artículo 26"
+      ],
+      "hybrid": [
+        "Artículo 23",
+        "Artículo 26",
+        "Disposición adicional quinta",
+        "Artículo 24",
+        "Disposición adicional sexta"
+      ],
+      "vector": [
+        "Artículo 26",
+        "Artículo 30",
+        "Artículo 32",
+        "Artículo 24",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 23",
+        "Artículo 24",
+        "Disposición adicional quinta",
+        "Artículo 36",
+        "Artículo 40"
+      ]
+    },
+    {
+      "id": "c14",
+      "expected": [
+        "Artículo 30"
+      ],
+      "hybrid": [
+        "Artículo 30",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 39",
+        "Artículo 32"
+      ],
+      "vector": [
+        "Artículo 30",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 20",
+        "Artículo 33"
+      ],
+      "text": [
+        "Artículo 30",
+        "Artículo 40",
+        "Artículo 28",
+        "Artículo 41",
+        "Artículo 39"
+      ]
+    },
+    {
+      "id": "c15",
+      "expected": [
+        "Artículo 14"
+      ],
+      "hybrid": [
+        "Disposición adicional primera",
+        "Artículo 1",
+        "Artículo 14",
+        "Artículo 16",
+        "Artículo 36"
+      ],
+      "vector": [
+        "Artículo 14",
+        "Disposición adicional primera",
+        "Artículo 15",
+        "Artículo 11",
+        "Disposición adicional séptima"
+      ],
+      "text": [
+        "Disposición adicional primera",
+        "Artículo 36",
+        "Artículo 1",
+        "Artículo 16",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "c16",
+      "expected": [
+        "Artículo 25"
+      ],
+      "hybrid": [
+        "Disposición adicional quinta",
+        "Disposición adicional sexta",
+        "Artículo 25",
+        "Artículo 31",
+        "Artículo 33"
+      ],
+      "vector": [
+        "Disposición adicional quinta",
+        "Disposición adicional sexta",
+        "Artículo 8",
+        "Artículo 31",
+        "Artículo 33"
+      ],
+      "text": [
+        "Disposición adicional quinta",
+        "Artículo 25",
+        "Artículo 39",
+        "Disposición adicional sexta",
+        "Artículo 15"
+      ]
+    },
+    {
+      "id": "c17",
+      "expected": [
+        "Artículo 41"
+      ],
+      "hybrid": [
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 21",
+        "Artículo 15"
+      ],
+      "vector": [
+        "Artículo 41",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 15",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 15",
+        "Artículo 40",
+        "Artículo 39",
+        "Artículo 41",
+        "Artículo 1"
+      ]
+    },
+    {
+      "id": "c18",
+      "expected": [
+        "Artículo 33"
+      ],
+      "hybrid": [
+        "Artículo 33",
+        "Artículo 29",
+        "Artículo 22",
+        "Artículo 16",
+        "Artículo 30"
+      ],
+      "vector": [
+        "Artículo 33",
+        "Artículo 21",
+        "Artículo 20",
+        "Artículo 30",
+        "Artículo 29"
+      ],
+      "text": [
+        "Artículo 33",
+        "Artículo 15",
+        "Artículo 16",
+        "Artículo 22",
+        "Artículo 24"
+      ]
+    },
+    {
+      "id": "m01",
+      "expected": [
+        "Artículo 31"
+      ],
+      "hybrid": [
+        "Artículo 31",
+        "Artículo 32",
+        "Artículo 37",
+        "Artículo 30",
+        "Artículo 34"
+      ],
+      "vector": [
+        "Artículo 31",
+        "Disposición transitoria tercera",
+        "Artículo 30",
+        "Artículo 34",
+        "Artículo 23"
+      ],
+      "text": [
+        "Artículo 31",
+        "Artículo 35",
+        "Artículo 33",
+        "Artículo 37",
+        "Artículo 32"
+      ]
+    },
+    {
+      "id": "m02",
+      "expected": [
+        "Artículo 31"
+      ],
+      "hybrid": [
+        "Artículo 31",
+        "Artículo 30",
+        "Artículo 34",
+        "Artículo 32",
+        "Artículo 33"
+      ],
+      "vector": [
+        "Artículo 31",
+        "Artículo 30",
+        "Artículo 34",
+        "Artículo 67",
+        "Disposición transitoria tercera"
+      ],
+      "text": [
+        "Artículo 31",
+        "Artículo 33",
+        "Artículo 32",
+        "Artículo 30",
+        "Artículo 34"
+      ]
+    },
+    {
+      "id": "m03",
+      "expected": [
+        "Artículo 46"
+      ],
+      "hybrid": [
+        "Anexo VI",
+        "Anexo III",
+        "Anexo IV",
+        "Artículo 46",
+        "Anexo IX"
+      ],
+      "vector": [
+        "Artículo 46",
+        "Anexo VI",
+        "Anexo I",
+        "Anexo IV",
+        "Anexo II"
+      ],
+      "text": [
+        "Anexo III",
+        "Anexo IX",
+        "Anexo VI",
+        "Artículo 25",
+        "Artículo 48"
+      ]
+    },
+    {
+      "id": "m04",
+      "expected": [
+        "Artículo 67"
+      ],
+      "hybrid": [
+        "Artículo 67",
+        "Artículo 63",
+        "Artículo 64",
+        "Artículo 66",
+        "Artículo 65"
+      ],
+      "vector": [
+        "Artículo 67",
+        "Artículo 63",
+        "Anexo VII · Artículo 5",
+        "Artículo 64",
+        "Artículo 65"
+      ],
+      "text": [
+        "Artículo 67",
+        "Artículo 62",
+        "Artículo 63",
+        "Artículo 64",
+        "Artículo 66"
+      ]
+    },
+    {
+      "id": "m05",
+      "expected": [
+        "Artículo 67"
+      ],
+      "hybrid": [
+        "Artículo 67",
+        "Artículo 65",
+        "Artículo 64",
+        "Artículo 66",
+        "Artículo 63"
+      ],
+      "vector": [
+        "Artículo 67",
+        "Artículo 65",
+        "Artículo 64",
+        "Artículo 63",
+        "Anexo VII · Artículo 5"
+      ],
+      "text": [
+        "Artículo 65",
+        "Artículo 62",
+        "Artículo 64",
+        "Artículo 67",
+        "Artículo 23"
+      ]
+    },
+    {
+      "id": "m06",
+      "expected": [
+        "Artículo 84"
+      ],
+      "hybrid": [
+        "Artículo 84",
+        "Artículo 48",
+        "Anexo I",
+        "Artículo 80",
+        "Anexo IX"
+      ],
+      "vector": [
+        "Artículo 84",
+        "Anexo I",
+        "Artículo 80",
+        "Anexo VI",
+        "Anexo II"
+      ],
+      "text": [
+        "Artículo 84",
+        "Artículo 48",
+        "Anexo IX",
+        "Anexo IV",
+        "Anexo VIII"
+      ]
+    },
+    {
+      "id": "m07",
+      "expected": [
+        "Artículo 44"
+      ],
+      "hybrid": [
+        "Artículo 44",
+        "Artículo 31",
+        "Artículo 26",
+        "Artículo 63",
+        "Artículo 23"
+      ],
+      "vector": [
+        "Artículo 44",
+        "Artículo 43",
+        "Disposición transitoria tercera",
+        "Artículo 67",
+        "Disposición transitoria quinta"
+      ],
+      "text": [
+        "Artículo 44",
+        "Artículo 26",
+        "Artículo 31",
+        "Artículo 23",
+        "Artículo 63"
+      ]
+    },
+    {
+      "id": "m08",
+      "expected": [
+        "Artículo 44"
+      ],
+      "hybrid": [
+        "Artículo 44",
+        "Artículo 45",
+        "Artículo 42",
+        "Artículo 43",
+        "Artículo 25"
+      ],
+      "vector": [
+        "Artículo 44",
+        "Artículo 45",
+        "Artículo 80",
+        "Artículo 43",
+        "Artículo 48"
+      ],
+      "text": [
+        "Artículo 44",
+        "Artículo 25",
+        "Anexo IX",
+        "Artículo 23",
+        "Artículo 42"
+      ]
+    },
+    {
+      "id": "m09",
+      "expected": [
+        "Artículo 49"
+      ],
+      "hybrid": [
+        "Artículo 48",
+        "Anexo IX",
+        "Artículo 45",
+        "Artículo 49",
+        "Artículo 43"
+      ],
+      "vector": [
+        "Artículo 43",
+        "Artículo 48",
+        "Artículo 45",
+        "Artículo 47",
+        "Anexo VII · Artículo 1"
+      ],
+      "text": [
+        "Artículo 48",
+        "Anexo IX",
+        "Anexo VI",
+        "Anexo IV",
+        "Artículo 42"
+      ]
+    },
+    {
+      "id": "m10",
+      "expected": [
+        "Artículo 5"
+      ],
+      "hybrid": [
+        "Artículo 10",
+        "Artículo 26",
+        "Artículo 5",
+        "Artículo 46",
+        "Artículo 16"
+      ],
+      "vector": [
+        "Disposición transitoria séptima",
+        "Artículo 10",
+        "Artículo 26",
+        "Artículo 103",
+        "Artículo 94"
+      ],
+      "text": [
+        "Anexo VIII",
+        "Artículo 10",
+        "Anexo I",
+        "Artículo 5",
+        "Artículo 2"
+      ]
+    },
+    {
+      "id": "m11",
+      "expected": [
+        "Artículo 121"
+      ],
+      "hybrid": [
+        "Artículo 42",
+        "Artículo 37",
+        "Artículo 121",
+        "Anexo IX",
+        "Artículo 48"
+      ],
+      "vector": [
+        "Artículo 121",
+        "Artículo 48",
+        "Artículo 37",
+        "Artículo 113",
+        "Artículo 101"
+      ],
+      "text": [
+        "Anexo IX",
+        "Artículo 78",
+        "Artículo 33",
+        "Artículo 42",
+        "Artículo 43"
+      ]
+    },
+    {
+      "id": "m12",
+      "expected": [
+        "Artículo 50"
+      ],
+      "hybrid": [
+        "Artículo 46",
+        "Anexo VIII",
+        "Artículo 11",
+        "Anexo IV",
+        "Anexo I"
+      ],
+      "vector": [
+        "Artículo 46",
+        "Anexo IV",
+        "Artículo 52",
+        "Anexo II",
+        "Artículo 26"
+      ],
+      "text": [
+        "Anexo VIII",
+        "Artículo 11",
+        "Anexo I",
+        "Artículo 97",
+        "Artículo 88"
+      ]
+    }
+  ]
+}
