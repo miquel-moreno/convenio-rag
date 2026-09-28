@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pregunta a tu convenio · demo</title>
+<style>
+  :root {
+    --bg: #f5f7fb; --card: #ffffff; --text: #1f2933; --muted: #616e7c; --line: #e4e7eb;
+    --accent: #2563eb; --ok: #15803d; --ok-bg: #dcfce7; --no: #92400e; --no-bg: #fef3c7;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.55 "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  main { max-width: 820px; margin: 0 auto; padding: 28px 16px 40px; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+  label { display: block; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+  select, input { width: 100%; border: 1px solid #c3cad5; border-radius: 8px; padding: 10px; font: inherit; background: #fff; }
+  .row { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; }
+  @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+  .examples { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { border: 1px solid var(--line); background: #f8fafc; border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  button#send { margin-top: 14px; background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 10px 18px;
+                font: inherit; font-weight: 600; cursor: pointer; }
+  button#send:disabled { opacity: .6; cursor: default; }
+  .status { display: inline-block; font-weight: 700; border-radius: 999px; padding: 4px 14px; }
+  .status.found { background: var(--ok-bg); color: var(--ok); }
+  .status.missing { background: var(--no-bg); color: var(--no); }
+  .head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 12px; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .answer { font-size: 17px; margin: 0 0 14px; }
+  .cites { border-top: 1px solid var(--line); padding-top: 10px; }
+  .cites ul { margin: 6px 0 0; padding-left: 20px; }
+  .cites a { color: var(--accent); text-decoration: none; }
+  .cites a:hover { text-decoration: underline; }
+  .error { color: #b91c1c; font-weight: 600; }
+  .hidden { display: none; }
+  footer { color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pregunta a tu convenio colectivo</h1>
+  <p class="sub">Responde con el texto oficial del BOE y cita el artículo. Si la respuesta no está en el convenio, lo dice.</p>
+
+  <section class="card">
+    <div class="row">
+      <div>
+        <label for="agreement">Convenio</label>
+        <select id="agreement">
+          <option value="BOE-A-2025-7766">Consultoría y TI (XIX)</option>
+          <option value="BOE-A-2022-479">Metal (IV)</option>
+        </select>
+      </div>
+      <div>
+        <label for="question">Tu pregunta</label>
+        <input id="question" type="text" maxlength="500" placeholder="¿Cuántos días de vacaciones tengo?">
+      </div>
+    </div>
+    <div class="examples" id="examples"></div>
+    <button id="send" type="button">Preguntar</button>
+  </section>
+
+  <section class="card hidden" id="result"></section>
+  <footer>API: <a href="/docs">/docs</a> · Convenios estatales publicados en el BOE</footer>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const EXAMPLES = {
+  "BOE-A-2025-7766": ["¿Cuántos días de vacaciones tengo?", "¿Cuántos días de permiso tengo si me caso?",
+                      "¿Con cuánta antelación aviso si me voy?", "¿Tengo derecho a un coche de empresa?"],
+  "BOE-A-2022-479": ["¿Cuánto dura el periodo de prueba en el grupo 3?", "¿Cuántas horas al año se trabajan en el metal?",
+                     "¿Cuántos equipos de ropa de trabajo me dan?", "¿La empresa me paga la guardería?"],
+};
+const esc = (v) => String(v ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function showExamples() {
+  $("examples").innerHTML = EXAMPLES[$("agreement").value]
+    .map((q) => `<button type="button" class="chip">${esc(q)}</button>`).join("");
+  $("examples").querySelectorAll(".chip").forEach((chip) =>
+    chip.addEventListener("click", () => { $("question").value = chip.textContent; $("question").focus(); }));
+}
+$("agreement").addEventListener("change", showExamples);
+$("question").addEventListener("keydown", (e) => { if (e.key === "Enter") $("send").click(); });
+showExamples();
+
+$("send").addEventListener("click", async () => {
+  const question = $("question").value.trim();
+  if (question.length < 3) return;
+  $("send").disabled = true; $("send").textContent = "Buscando en el convenio…";
+  try {
+    const res = await fetch("/ask", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question, agreement: $("agreement").value }),
+    });
+    const body = await res.json();
+    if (!res.ok) throw new Error(body.error?.message || body.detail?.[0]?.msg || res.statusText);
+    render(body);
+  } catch (err) {
+    $("result").innerHTML = `<p class="error">No se pudo responder: ${esc(err.message)}</p>`;
+    $("result").classList.remove("hidden");
+  } finally {
+    $("send").disabled = false; $("send").textContent = "Preguntar";
+  }
+});
+
+function render(r) {
+  const cites = r.citations.map((c) => `<li><a href="${esc(c.source_url)}" target="_blank" rel="noopener">
+      ${esc(c.agreement)} · ${esc(c.ref)}${c.title ? ". " + esc(c.title) : ""} ↗</a></li>`).join("");
+  $("result").innerHTML = `
+    <div class="head">
+      <span class="status ${r.found ? "found" : "missing"}">${r.found ? "✔ Respuesta" : "✘ No aparece en el convenio"}</span>
+      <span class="meta">${(r.latency_ms / 1000).toFixed(1)} s · ${esc(r.model)}</span>
+    </div>
+    <p class="answer">${esc(r.answer)}</p>
+    ${cites ? `<div class="cites"><strong>Dónde lo dice</strong><ul>${cites}</ul></div>` : ""}`;
+  $("result").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
