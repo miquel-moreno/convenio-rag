@@ -12,3 +12,5 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
   them in PostgreSQL (`agreements`, `chunks`); `scripts/ingest.py`, idempotent.
 - Hybrid search: Spanish full-text + local multilingual embeddings in pgvector, fused with
   RRF; `GET /search`. Search tests run against PostgreSQL in CI.
+- `POST /ask`: answer from the retrieved articles with verified citations and official BOE
+  links, or an honest "not found".

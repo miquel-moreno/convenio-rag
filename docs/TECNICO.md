@@ -44,6 +44,18 @@ El texto oficial (XML) está versionado en `data/boe/`: la carga y la evaluació
 
 Por qué dos buscadores: en una prueba con frases de ejemplo, la búsqueda semántica relacionó "¿me pagan más si trabajo de noche?" con un texto sobre el "plus de nocturnidad", con el que no comparte ninguna palabra; la de texto no puede hacerlo. A la inversa, la de texto es más fiable con términos exactos.
 
+## Preguntar: `POST /ask`
+
+```bash
+curl -X POST http://localhost:8000/ask -H "Content-Type: application/json"      -d '{"question": "¿Cuántos días de vacaciones tengo?", "agreement": "BOE-A-2025-7766"}'
+```
+
+Devuelve `found`, `answer` (1–3 frases), `citations` (convenio, artículo, título y enlace oficial al BOE) y `sources` (los artículos que se dieron al modelo).
+
+1. Búsqueda híbrida → los 5 artículos más relevantes (texto completo de cada uno, hasta 4000 caracteres).
+2. Se dan al LLM como fuentes numeradas `[1]…[5]` con reglas estrictas: solo esas fuentes, citar por número, decir si la respuesta no está. Salida estructurada estricta `{found, answer, citations}`, con un reintento si no es válida.
+3. **Verificación:** cada cita debe ser una de las fuentes dadas; las inventadas se descartan y una respuesta sin ninguna cita válida se convierte en "no encontrado".
+
 ## Arquitectura
 
 ```
@@ -71,6 +83,9 @@ src/convenio_rag/
 | pgvector en PostgreSQL, no una base de datos vectorial aparte | Un solo sistema que ya se usa para los datos, con transacciones, y las dos búsquedas en la misma consulta. Para decenas de miles de fragmentos es de sobra |
 | Tests de búsqueda contra PostgreSQL real (servicio en la CI) | SQLite no tiene búsqueda de texto en español ni pgvector. Las pruebas `tests/pg` se ejecutan en la CI con un contenedor `pgvector/pgvector:pg16` y en local con `TEST_DATABASE_URL` |
 | Índice de texto con `\|\|` y no `concat_ws` | PostgreSQL solo acepta funciones IMMUTABLE en un índice por expresión; `concat_ws` no lo es |
+| El LLM cita fuentes numeradas y el código verifica las citas | El modelo solo puede citar lo que se le dio; si cita un número que no existe o no cita nada, la respuesta no se da por buena. Así "no inventa" no depende solo de las instrucciones |
+| El artículo completo como contexto, no solo el fragmento encontrado | El fragmento que mejor casa puede ser la segunda parte de un artículo cuya condición está en la primera |
+| "No lo regula" también es una respuesta | Si el convenio remite a otro convenio o a la ley, el modelo debe decirlo y citar ese artículo, en lugar de dar un número de memoria |
 
 ## Evaluación
 
