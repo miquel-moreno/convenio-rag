@@ -38,7 +38,7 @@ test:
 check: lint typecheck test
 
 eval:
-	uv run python -m evals.run
+	uv run python -m evals.run $(ARGS)
 
 up:
 	docker compose up --build
